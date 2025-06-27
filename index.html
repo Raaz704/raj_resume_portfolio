@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raj Thakur | Web Developer & SEO Executive</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: rgba(30, 60, 114, 0.95);
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    nav h1 {
+      font-size: 28px;
+      color: #00ffd5;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00ffd5;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #00ffd5;
+      position: absolute;
+      right: 20px;
+    }
+
+    @media (max-width: 767px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: row;
+        width: 100%;
+        background-color: #1e3c72;
+        margin-top: 20px;
+        justify-content: center;
+      }
+
+      .nav-links.active {
+        display: flex;
+        align-items: center;
+        animation: slideDown 0.5s ease-in-out;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero {
+      padding: 100px 20px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #00c3ff, #021a3b);
+      position: relative;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      color: #00ffd5;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #00ffd5;
+      width: fit-content;
+      margin: 0 auto 10px;
+    }
+
+    .hero p {
+      font-size: 24px;
+      margin-bottom: 25px;
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out 2.5s forwards;
+    }
+
+    .profile-img img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 5px solid #00ffd5;
+      object-fit: cover;
+      box-shadow: 0 0 30px rgba(0,255,213,0.5);
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background-color: #00ffd5;
+      color: #000;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 16px;
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out 3s forwards;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background-color: #00c2a8;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #ffde59;
+      text-align: center;
+      position: relative;
+    }
+
+    section h2::after {
+      content: '';
+      width: 60px;
+      height: 4px;
+      background: #00ffd5;
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .skill-box, .exp-box, .edu-box {
+      background-color: rgba(0,0,0,0.25);
+      border-left: 5px solid #00ffd5;
+      padding: 20px 25px;
+      border-radius: 12px;
+      margin: 20px 0;
+      box-shadow: 0 0 15px rgba(0,255,213,0.3);
+    }
+
+    footer {
+      background-color: #0f2027;
+      padding: 20px;
+      text-align: center;
+      color: #aaa;
+    }
+   
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>RAJ THAKUR</h1>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="profile-img">
+        <img src="RAJ IMAGE.jpg" alt="Raj Thakur">
+      </div>
+      <h2 id="type-text"></h2>
+      <p>Web Developer & SEO Executive</p>
+      <a href="#contact" class="btn">Contact Me</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="skill-box">
+      <p>I have working knowledge of both SEO and Web Development, with the ability to create responsive, user-friendly websites and apply effective SEO strategies to improve their search visibility. I am familiar with HTML, CSS, JavaScript, and WordPress, along with on-page SEO techniques, basic technical SEO, and content optimization.</p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Work Experience</h2>
+    <div class="exp-box">
+      <h3>SEO Executive</h3>
+      <p><strong>Adtric Solution Pvt Ltd, Greater Noida</strong><br>April 9, 2025 – Present</p>
+      <ul>
+        <li>Improved page load time by 15% via technical optimizations.</li>
+        <li>Secured 10+ high-authority backlinks through outreach.</li>
+        <li>Generated performance reports using Google Analytics and SEMrush.</li>
+      </ul>
+    </div>
+    <div class="exp-box">
+      <h3>Employee Assistance SEO Executive</h3>
+      <p><strong>Adtric Solution Pvt Ltd</strong><br>June 9, 2025 – Till</p>
+      <ul>
+        <li>Supported content audits and meta-tag updates on 30+ pages.</li>
+        <li>Resolved crawl errors, reducing 404s by 40%.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="edu-box">
+      <p><strong>2024 - Global Institute of Information Technology</strong><br>Bachelor of Computer Applications (BCA)</p>
+      <p><strong>2024 - DUCAT (Noida)</strong><br>Full Stack with Java</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill-box">
+      <p><strong>Development:</strong> HTML, CSS, JavaScript, Bootstrap, WordPress, Core Java</p>
+      <p><strong>SEO:</strong> On-Page SEO, Off-Page SEO (Backlinks, Internal links, Article Schema)</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="skill-box">
+      <p><strong>Phone:</strong> +91-8882691258</p>
+      <p><strong>Email:</strong> raj211355@gmail.com</p>
+      <p><strong>Website:</strong> <a href="https://adtric.in/Demo/rakj-demo-home/" target="_blank" style="color:#00ffd5; text-decoration: none;">Raj-demo-home</a></p>
+      <p><strong>Website:</strong> <a href="https://adtric.in/Demo/hamilton-raj-demo/" target="_blank" style="color:#00ffd5; text-decoration: none;">hamilton-raj-demo</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Raj Thakur. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Typing effect
+    const text = "Hello, I'm Raj👋";
+    const typeElement = document.getElementById('type-text');
+    let i = 0;
+
+    function typeWriter() {
+      if (i < text.length) {
+        typeElement.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100); // typing speed
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
+</body>
+</html>
